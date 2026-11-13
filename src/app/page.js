@@ -1,15 +1,20 @@
 import HeroBanner from "@/components/Herobanner";
-import ProductGrid from "@/components/ProductGrid";
+import MenuSection from "@/components/MenuSection";
 import TrustSection from "@/components/TrustSection";
 import ContactSection from "@/components/ContactSection";
+
+import { getMenu } from "@/lib/menu";
+
 export const dynamic = "force-dynamic";
 
-export default function Home() {
+export default async function Home() {
+  const menu = await getMenu();
+
   return (
-    <div className="">
-      <main className="">
+    <div>
+      <main>
         <HeroBanner />
-        <ProductGrid />
+        <MenuSection items={menu} />
         <TrustSection />
         <ContactSection />
       </main>
