@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function MenuSection({ items = [] }) {
   const categories = ["Subs", "Sides", "Drikke"];
 
@@ -24,22 +26,39 @@ export default function MenuSection({ items = [] }) {
 
                 <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
                   {categoryItems.map((item) => (
-                    <article key={item.id}>
-                      <div className="flex items-start justify-between gap-4">
-                        <h4 className="text-xl font-extrabold uppercase">
-                          {item.name}
-                        </h4>
-
-                        <span className="shrink-0 text-lg font-bold">
-                          {item.price} kr
-                        </span>
-                      </div>
-
-                      {item.description && (
-                        <p className="mt-2 max-w-md text-sm leading-relaxed">
-                          {item.description}
-                        </p>
+                    <article
+                      key={item.id}
+                      className="overflow-hidden rounded-xl bg-yellow-300"
+                    >
+                      {item.image && (
+                        <div className="relative aspect-[4/3] w-full">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover"
+                          />
+                        </div>
                       )}
+
+                      <div className="p-5">
+                        <div className="flex items-start justify-between gap-4">
+                          <h4 className="text-xl font-extrabold uppercase">
+                            {item.name}
+                          </h4>
+
+                          <span className="shrink-0 text-lg font-bold">
+                            {item.price} kr
+                          </span>
+                        </div>
+
+                        {item.description && (
+                          <p className="mt-2 text-sm leading-relaxed">
+                            {item.description}
+                          </p>
+                        )}
+                      </div>
                     </article>
                   ))}
                 </div>
