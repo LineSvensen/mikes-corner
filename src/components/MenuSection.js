@@ -24,14 +24,26 @@ export default function MenuSection({ items = [] }) {
                   {category}
                 </h3>
 
-                <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
+                <div
+                  className={`grid gap-y-8 ${
+                    category === "Drikke"
+                      ? "grid-cols-2 gap-x-4 sm:grid-cols-3 lg:grid-cols-4"
+                      : "grid-cols-1   gap-x-12 sm:grid-cols-2 md:grid-cols-3"
+                  }`}
+                >
                   {categoryItems.map((item) => (
                     <article
                       key={item.id}
                       className="overflow-hidden rounded-xl bg-yellow-300"
                     >
                       {item.image && (
-                        <div className="relative aspect-[4/3] w-full">
+                        <div
+                          className={`relative w-full ${
+                            category === "Drikke"
+                              ? "aspect-square"
+                              : "aspect-[2/3]"
+                          }`}
+                        >
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -42,13 +54,19 @@ export default function MenuSection({ items = [] }) {
                         </div>
                       )}
 
-                      <div className="p-5">
-                        <div className="flex items-start justify-between gap-4">
-                          <h4 className="text-xl font-extrabold uppercase">
+                      <div className={category === "Drikke" ? "p-4" : "p-6"}>
+                        <div className="flex items-start justify-between gap-2 sm:gap-4">
+                          <h4
+                            className={
+                              category === "Drikke"
+                                ? "text-base font-extrabold uppercase max-w-24  lg:max-w-none"
+                                : "text-xl font-extrabold uppercase"
+                            }
+                          >
                             {item.name}
                           </h4>
 
-                          <span className="shrink-0 text-lg font-bold">
+                          <span className="shrink-0 text-base sm:text-lg font-bold ">
                             {item.price} kr
                           </span>
                         </div>
