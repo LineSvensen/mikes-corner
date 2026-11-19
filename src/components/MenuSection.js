@@ -18,6 +18,8 @@ export default function MenuSection({ items = [] }) {
 
             if (categoryItems.length === 0) return null;
 
+            const isDrink = category === "Drikke";
+
             return (
               <div key={category}>
                 <h3 className="mb-8 border-b-4 border-black pb-3 text-3xl font-black uppercase text-red-700 md:text-5xl">
@@ -26,47 +28,65 @@ export default function MenuSection({ items = [] }) {
 
                 <div
                   className={`grid gap-y-8 ${
-                    category === "Drikke"
-                      ? "grid-cols-2 gap-x-4 sm:grid-cols-3 lg:grid-cols-4"
-                      : "grid-cols-1   gap-x-12 sm:grid-cols-2 md:grid-cols-3"
+                    isDrink
+                      ? "grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4"
+                      : "grid-cols-1 gap-x-12 sm:grid-cols-2 md:grid-cols-3"
                   }`}
                 >
                   {categoryItems.map((item) => (
                     <article
                       key={item.id}
-                      className="overflow-hidden rounded-xl bg-yellow-300"
+                      className={`overflow-hidden rounded-xl bg-yellow-300 ${
+                        isDrink ? "flex flex-row" : ""
+                      }`}
                     >
                       {item.image && (
                         <div
-                          className={`relative w-full ${
-                            category === "Drikke"
-                              ? "aspect-square"
-                              : "aspect-[2/3]"
+                          className={`relative shrink-0 ${
+                            isDrink
+                              ? "aspect-square w-24 sm:w-28 lg:w-32"
+                              : "aspect-[4/3] lg:aspect-[4/4] w-full"
                           }`}
                         >
                           <Image
                             src={item.image}
                             alt={item.name}
                             fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
+                            sizes={
+                              isDrink
+                                ? "(max-width: 639px) 96px, (max-width: 1023px) 112px, 128px"
+                                : "(max-width: 639px) 100vw, (max-width: 767px) 50vw, 33vw"
+                            }
                             className="object-cover"
                           />
                         </div>
                       )}
 
-                      <div className={category === "Drikke" ? "p-4" : "p-6"}>
-                        <div className="flex items-start justify-between gap-2 sm:gap-4">
+                      <div
+                        className={
+                          isDrink
+                            ? "flex min-w-0 flex-1 flex-col justify-center p-4"
+                            : "p-6"
+                        }
+                      >
+                        <div
+                          className={
+                            isDrink
+                              ? "flex flex-col gap-1"
+                              : "flex items-start justify-between gap-2 sm:gap-4"
+                          }
+                        >
                           <h4
                             className={
-                              category === "Drikke"
-                                ? "text-base font-extrabold uppercase max-w-24  lg:max-w-none"
+                              isDrink
+                                ? "text-base font-extrabold uppercase leading-tight break-normal hyphens-none whitespace-normal"
                                 : "text-xl font-extrabold uppercase"
                             }
                           >
                             {item.name}
                           </h4>
 
-                          <span className="shrink-0 text-base sm:text-lg font-bold ">
+                          <span className="shrink-0 text-base font-bold sm:text-lg">
                             {item.price} kr
                           </span>
                         </div>

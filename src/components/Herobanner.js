@@ -7,8 +7,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     id: 1,
-    image: "/images/Herobanner/room1.jpg",
-    foregroundImage: "/images/Herobanner/face.jpg",
+    image: "/images/Herobanner/mikes-yellow.webp",
+    foregroundImage: "/images/Herobanner/mikes-menu-img.jpg",
     eyebrow: "New collection",
     title: "Simple things, made well.",
     text: "Discover our latest products.",
@@ -120,10 +120,10 @@ export default function HeroBanner() {
             <img
               src={item.image}
               alt=""
-              className="h-full w-full object-cover"
+              className="h-full w-full object-fill"
             />
 
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 " />
           </div>
         ))}
 
@@ -147,7 +147,7 @@ export default function HeroBanner() {
             </div>
 
             {/* Text */}
-            <div className="order-2 flex w-full max-w-xl flex-col items-center text-center text-white md:order-1 md:items-start md:text-left">
+            <div className="order-2 flex w-full max-w-xl flex-col items-center text-center text-red-700 md:order-1 md:items-start md:text-left">
               <p className="mb-3 text-xs uppercase tracking-[0.2em] sm:text-sm">
                 {slide.eyebrow}
               </p>
