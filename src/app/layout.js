@@ -4,7 +4,7 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AnnouncementBar from "@/components/AnnouncementBar";
+// import AnnouncementBar from "@/components/AnnouncementBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <AnnouncementBar />
+        {/* <AnnouncementBar /> */}
         <Header />
 
         {children}

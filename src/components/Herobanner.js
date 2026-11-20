@@ -8,7 +8,7 @@ const slides = [
   {
     id: 1,
     image: "/images/Herobanner/mikes-yellow.webp",
-    foregroundImage: "/images/Herobanner/mikes-menu-img.jpg",
+    foregroundImage: "/images/Herobanner/food-image.webp",
     eyebrow: "New collection",
     title: "Simple things, made well.",
     text: "Discover our latest products.",
@@ -131,19 +131,12 @@ export default function HeroBanner() {
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-start px-12 pb-16 pt-8 sm:px-16 sm:pt-10 md:items-center md:px-24 md:py-12 lg:px-28 xl:px-32">
           <div className="flex w-full flex-col items-center justify-center gap-8 md:grid md:grid-cols-2 md:items-center md:gap-12">
             {/* Foreground images */}
-            <div className="relative order-1 flex h-[240px] w-full justify-center sm:h-[280px] md:order-2 md:h-[380px] md:justify-end lg:h-[460px]">
-              {slides.map((item, index) => (
-                <img
-                  key={item.id}
-                  src={item.foregroundImage}
-                  alt=""
-                  className={`absolute h-full max-w-[75%] object-contain transition-opacity duration-300 sm:max-w-[70%] md:max-w-full ${
-                    index === currentSlide
-                      ? "opacity-100"
-                      : "pointer-events-none opacity-0"
-                  }`}
-                />
-              ))}
+            <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[45%] md:block">
+              <img
+                src={slide.foregroundImage}
+                alt=""
+                className="h-full w-full object-cover object-left"
+              />
             </div>
 
             {/* Text */}
