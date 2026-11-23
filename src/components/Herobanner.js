@@ -4,7 +4,7 @@ import { FiMapPin } from "react-icons/fi";
 
 export default function HeroBanner() {
   return (
-    <section className="relative overflow-hidden bg-[#FAC800] min-[800px]:flex min-[800px]:h-[calc(100svh-66px)] min-[800px]:min-h-[680px]">
+    <section className="relative overflow-hidden bg-[#FAC800] min-h-[calc(100svh-62px)] min-[800px]:flex min-[800px]:h-[calc(100svh-62px)] min-[800px]:min-h-[560px]">
       {/* Background */}
       <img
         src="/images/Herobanner/mikes-yellow.webp"
@@ -50,7 +50,7 @@ export default function HeroBanner() {
         </h1>
 
         <Link
-          href="/menu"
+          href="/#menu"
           className="rounded-2xl bg-[#E8191C] px-8 py-3 text-lg font-bold uppercase text-white transition hover:bg-red-700 min-[800px]:px-9 min-[800px]:text-xl"
         >
           See menu

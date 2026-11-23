@@ -15,8 +15,8 @@ export default async function Home() {
       <main>
         <HeroBanner />
         <MenuSection items={menu} />
-        <TrustSection />
-        <ContactSection />
+        {/* <TrustSection /> */}
+        {/* <ContactSection /> */}
       </main>
     </div>
   );

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import { FaInstagram } from "react-icons/fa6";
+
 import { useCartStore } from "@/store/cartStore";
 import { Menu, ShoppingBag, X } from "lucide-react";
 
@@ -22,18 +24,32 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold" onClick={closeMenu}>
-          Online Store
+          <img
+            src="/images/Herobanner/mikes-corner-logo.webp"
+            alt="Logo"
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-6 md:flex">
           <Link href="/">Home</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-          <Link href="/policy">Store policy</Link>
+          <Link href="/#menu" className=" text-black hover:text-[#E8191C]">
+            Menu
+          </Link>
+          <a
+            href="https://instagram.com/mikescorner"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" text-black hover:text-[#E8191C]"
+          >
+            <FaInstagram />
+          </a>
+          {/* <Link href="/about">About</Link> */}
+          {/* <Link href="/contact">Contact</Link> */}
+          {/* <Link href="/policy">Store policy</Link> */}
 
-          <Link
+          {/* <Link
             href="/cart"
             className="relative inline-flex"
             aria-label="Shopping cart"
@@ -51,12 +67,12 @@ export default function Header() {
                 </span>
               </span>
             )}
-          </Link>
+          </Link> */}
         </nav>
 
         {/* Mobile controls */}
         <div className="flex items-center gap-5 md:hidden ">
-          <Link
+          {/* <Link
             href="/cart"
             className="relative inline-flex"
             aria-label="Shopping cart"
@@ -75,7 +91,7 @@ export default function Header() {
                 </span>
               </span>
             )}
-          </Link>
+          </Link> */}
 
           <button
             type="button"
@@ -102,27 +118,36 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/products"
+              href="/#menu"
               onClick={closeMenu}
               className="border-b border-gray-100 py-3"
             >
-              Products
+              Menu
             </Link>
 
-            <Link
+            <a
+              href="https://instagram.com/mikescorner"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" text-black hover:text-[#E8191C]"
+            >
+              <FaInstagram />
+            </a>
+
+            {/* <Link
               href="/about"
               onClick={closeMenu}
               className="border-b border-gray-100 py-3"
             >
               About
-            </Link>
-            <Link href="/contact" onClick={closeMenu} className="py-3">
+            </Link> */}
+            {/* <Link href="/contact" onClick={closeMenu} className="py-3">
               Contact
-            </Link>
+            </Link> */}
 
-            <Link href="/policy" onClick={closeMenu} className="py-3">
+            {/* <Link href="/policy" onClick={closeMenu} className="py-3">
               Store policy
-            </Link>
+            </Link> */}
           </div>
         </nav>
       )}

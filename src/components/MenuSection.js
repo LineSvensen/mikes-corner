@@ -4,7 +4,10 @@ export default function MenuSection({ items = [] }) {
   const categories = ["Subs", "Sides", "Drikke"];
 
   return (
-    <section id="menu" className="bg-yellow-400 px-5 py-20 text-black">
+    <section
+      id="menu"
+      className="bg-yellow-400 px-5 py-20 text-black "
+    >
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-12 text-center text-6xl font-black uppercase tracking-tight text-red-700 md:text-8xl">
           Menu
