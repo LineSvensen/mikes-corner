@@ -14,6 +14,25 @@ html {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --font-amatic: var(--font-amatic-google);
+  --font-kalam: var(--font-kalam-google);
+  --font-bowlby-one: var(--font-bowlby-one-google);
+  --font-permanent-marker: var(--font-permanent-marker-google);
+}
+
+@theme {
+  /* Mikes Corner – Colors */
+  --color-mc-black: #232323;
+  --color-mc-red: #e91717;
+  --color-mc-red-hover: #b41212;
+  --color-mc-yellow-dark: #fac800;
+  --color-mc-yellow-light: #ffe02a;
+  --color-mc-beige: #fff1c7;
+  --color-mc-green: #016738;
+  --color-mc-blue: #225ab5;
+  --color-mc-orange: #fc8406;
+  --color-mc-purple: #860584;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,4 +46,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.mc-herobanner-h1 {
+}
+
+.mc-menu-h2 {
+}
+
+.mc-cards-h3 {
+}
+
+.mc-price {
+}
+
+.cards-description {
+}
+
+.nav-links {
 }

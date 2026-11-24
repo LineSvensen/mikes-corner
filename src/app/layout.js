@@ -1,10 +1,35 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Amatic_SC,
+  Kalam,
+  Bowlby_One,
+  Permanent_Marker,
+} from "next/font/google";
 
 import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 // import AnnouncementBar from "@/components/AnnouncementBar";
+
+const amatic = Amatic_SC({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-amatic-google",
+});
+
+const kalam = Kalam({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-kalam-google",
+});
+
+const bowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-bowlby-one-google",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +39,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const permanentMarker = Permanent_Marker({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-permanent-marker-google",
 });
 
 export const metadata = {
@@ -76,7 +107,15 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`
+        ${geistSans.variable}
+        ${geistMono.variable}
+        ${amatic.variable}
+        ${kalam.variable}
+        ${bowlbyOne.variable}
+        ${permanentMarker.variable}
+        h-full antialiased
+      `}
     >
       <body className="min-h-full flex flex-col">
         {/* <AnnouncementBar /> */}

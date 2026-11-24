@@ -4,14 +4,23 @@ export default function MenuSection({ items = [] }) {
   const categories = ["Subs", "Sides", "Drikke"];
 
   return (
-    <section
-      id="menu"
-      className="bg-yellow-400 px-5 py-20 text-black "
-    >
+    <section id="menu" className="bg-mc-yellow-dark px-5 py-8 text-mc-black ">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-6xl font-black uppercase tracking-tight text-red-700 md:text-8xl">
-          Menu
-        </h2>
+        <svg viewBox="0 0 340 100" className="w-full max-w-lg mx-auto">
+          <defs>
+            <path id="textCurve" d="M 15,125 Q 170,-25 325,125" fill="none" />
+          </defs>
+
+          <text
+            className="font-bowlby-one   fill-mc-red uppercase drop-shadow-[-5px_4px_0px_#fff1c7]"
+            fontSize="44"
+            textAnchor="middle"
+          >
+            <textPath href="#textCurve" startOffset="50%" alt="Menu">
+              MENU
+            </textPath>
+          </text>
+        </svg>
 
         <div className="space-y-16">
           {categories.map((category) => {
@@ -25,7 +34,7 @@ export default function MenuSection({ items = [] }) {
 
             return (
               <div key={category}>
-                <h3 className="mb-8 border-b-4 border-black pb-3 text-3xl font-black uppercase text-red-700 md:text-5xl">
+                <h3 className="mb-8 border-b-4 border-mc-green pb-3 text-3xl font-black uppercase text-mc-blue md:text-3xl">
                   {category}
                 </h3>
 
@@ -82,23 +91,32 @@ export default function MenuSection({ items = [] }) {
                           <h4
                             className={
                               isDrink
-                                ? "text-base font-extrabold uppercase leading-tight break-normal hyphens-none whitespace-normal"
-                                : "text-xl font-extrabold uppercase"
+                                ? "text-base  font-bowlby-one uppercase   leading-tight break-normal hyphens-none whitespace-normal text-mc-red"
+                                : "text-xl font-bowlby-one  uppercase  text-mc-red"
                             }
                           >
                             {item.name}
                           </h4>
 
-                          <span className="shrink-0 text-base font-bold sm:text-lg">
-                            {item.price} kr
+                          <span
+                            className={
+                              isDrink
+                                ? "text-sm  font-bowlby-one uppercase mt-2 text-nowrap leading-tight text-mc-red"
+                                : "text-sm  font-bowlby-one text-nowrap leading-tight uppercase pt-1 text-mc-red"
+                            }
+                          >
+                            {item.price} Kr
                           </span>
                         </div>
-
-                        {item.description && (
-                          <p className="mt-2 text-sm leading-relaxed">
-                            {item.description}
-                          </p>
-                        )}
+                        <p
+                          className={
+                            isDrink
+                              ? "mt-4 text-sm  font-permanent-marker text-mc-black/70    leading-5"
+                              : "mt-4 text-base sm:text-lg lg:text-xl font-permanent-marker text-mc-black/90    leading-5"
+                          }
+                        >
+                          {item.description}
+                        </p>
                       </div>
                     </article>
                   ))}

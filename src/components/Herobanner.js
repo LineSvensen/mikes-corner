@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
+import { FaLocationDot } from "react-icons/fa6";
 
 export default function HeroBanner() {
   return (
@@ -16,7 +17,7 @@ export default function HeroBanner() {
       <img
         src="/images/Herobanner/mob-food-image.webp"
         alt=""
-        className="pointer-events-none absolute bottom-0 left-0 z-0 h-[240px] w-full object-cover object-top min-[800px]:hidden"
+        className="pointer-events-none absolute bottom-[10%] left-0 z-0 h-[240px] w-full object-cover object-top min-[800px]:hidden"
       />
 
       {/* Food image, desktop: right side, over the info bar */}
@@ -27,17 +28,17 @@ export default function HeroBanner() {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-6 px-6 pb-[300px] pt-6 text-center min-[800px]:w-[55%] min-[800px]:justify-center min-[800px]:gap-8 min-[800px]:px-10 min-[800px]:pb-24 min-[800px]:pt-8">
+      <div className="relative z-10 flex flex-col items-center gap-6 px-6 pb-[260px] pt-16 lg:pt-4 text-center min-[800px]:w-[55%] min-[800px]:justify-center min-[800px]:gap-8 min-[800px]:px-10 min-[800px]:pb-24 min-[800px]:pt-8">
         <img
           src="/images/Herobanner/mikes-corner-logo.webp"
           alt="Mike's Corner"
-          className="h-14 self-start min-[800px]:h-16 min-[800px]:self-center"
+          className="h-8 sm:h-14  self-center  min-[800px]:h-16 min-[800px]:self-center"
         />
 
-        <h1 className="flex items-center gap-3 text-2xl font-bold uppercase leading-tight text-black [text-shadow:2px_2px_0_#fff] sm:text-4xl min-[800px]:text-5xl">
-          <svg
+        <h1 className="flex items-center gap-3 text-3xl pt-8 lg:pt-2 font-bold uppercase leading-tight text-mc-black [text-shadow:2px_2px_0_#fff] sm:text-4xl min-[800px]:text-6xl font-bowlby-one">
+          {/* <svg
             viewBox="0 0 40 40"
-            className="h-6 w-6 shrink-0 min-[800px]:h-10 min-[800px]:w-10"
+            className="h-8 w-8 shrink-0 min-[800px]:h-10 min-[800px]:w-10"
             fill="none"
             stroke="currentColor"
             strokeWidth="3"
@@ -45,28 +46,25 @@ export default function HeroBanner() {
             aria-hidden="true"
           >
             <path d="M4 22 L16 26 M8 10 L18 18 M22 4 L24 16" />
-          </svg>
+          </svg> */}
           Food, drinks &amp; good vibes
         </h1>
 
         <Link
           href="/#menu"
-          className="rounded-2xl bg-[#E8191C] px-8 py-3 text-lg font-bold uppercase text-white transition hover:bg-red-700 min-[800px]:px-9 min-[800px]:text-xl"
+          className="rounded-full bg-mc-red px-8 py-3 mt-4 lg:mt-0 text-lg  font-bold   uppercase text-white transition hover:bg-mc-red-hover min-[800px]:px-9 min-[800px]:text-xl   "
         >
           See menu
         </Link>
 
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 mt-2 lg:mt-0">
           <a
             href="https://ig.me/m/mikescorner"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-black px-5 py-2 text-sm font-bold uppercase text-black transition hover:bg-black hover:text-[#FAC800] min-[800px]:text-base"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-mc-black px-5 py-2 text-base lg:text-lg font-bold uppercase text-mc-black transition hover:bg-mc-black hover:text-[#FAC800] min-[800px]:text-lg"
           >
-            <FaInstagram
-              className="h-5 w-5 min-[800px]:h-6 min-[800px]:w-6"
-              aria-hidden="true"
-            />
+            <FaInstagram className="h-8 w-8 " aria-hidden="true" />
             Book party, event or catering
           </a>
 
@@ -74,27 +72,30 @@ export default function HeroBanner() {
             href="https://instagram.com/mikescorner"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs uppercase text-black underline min-[800px]:text-sm"
+            className="text-xs uppercase underline-offset-4   py-2 px-4  mt-2 text-mc-black underline min-[800px]:text-base"
           >
-            Check out our upcoming events! @mikescorner
+            Check out our upcoming events @mikescorner
           </a>
         </div>
       </div>
 
       {/* Info bar */}
-      <div className="absolute inset-x-0 bottom-0 z-20 bg-[#FDEFC8]">
-        <div className="flex items-center justify-between gap-4 px-5 py-3 text-sm font-medium uppercase text-black min-[800px]:w-[55%] min-[800px]:justify-center min-[800px]:gap-12 min-[800px]:py-4 min-[800px]:text-base">
-          <div className="flex items-center gap-3">
-            <FiMapPin className="h-6 w-6 shrink-0" aria-hidden="true" />
+      <div className="absolute inset-x-0 h-24 w-full flex items-center justify-center min-[800px]:justify-between bottom-0 z-20 bg-mc-beige">
+        <div className="flex items-center justify-between gap-10 sm:gap-12 px-2 py-3 text-sm font-medium uppercase text-mc-black min-[800px]:w-[54%] min-[800px]:justify-center min-[890px]:gap-16 min-[800px]:py-4 min-[700px]:text-base">
+          <div className="flex items-center font-bowlby-one text-mc-black/90 gap-4 lg:pr-8">
+            <FaLocationDot
+              className="h-6 h-6 sm:h-8 sm:w-8 shrink-0"
+              aria-hidden="true"
+            />
             <p>
-              Operagata 77 D
+              Operagata 77D
               <br />
               0194 Oslo
             </p>
           </div>
 
-          <p>
-            Man-Fri: 11-19
+          <p className="flex items-center font-bowlby-one lg:pl-8 text-mc-black/90 gap-4">
+            Mon-Fri: 11-19
             <br />
             Sat-Sun: 12-19
           </p>
