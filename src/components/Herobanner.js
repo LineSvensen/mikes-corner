@@ -5,40 +5,40 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function HeroBanner() {
   return (
-    <section className="relative overflow-hidden bg-[#FAC800] min-h-[calc(100svh-62px)] min-[800px]:flex min-[800px]:h-[calc(100svh-62px)] min-[800px]:min-h-[560px]">
+    <section className="relative portrait:md:flex portrait:md:items-center overflow-hidden bg-mc-yellow-dark min-h-[calc(100svh-62px)] wide:flex wide:h-[calc(100svh-62px)] wide:min-h-[560px]">
       {/* Background */}
-      <img
+      {/* <img
         src="/images/Herobanner/mikes-yellow.webp"
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
-      />
+      /> */}
 
       {/* Food image, mobile: along the bottom, under the info bar */}
       <img
         src="/images/Herobanner/mob-food-image.webp"
         alt=""
-        className="pointer-events-none absolute bottom-[10%] left-0 z-0 h-[240px] w-full object-cover object-top min-[800px]:hidden"
+        className="pointer-events-none portrait:md:h-[420px] absolute bottom-[10%] left-0 z-0 h-[240px] w-full object-cover object-top wide:hidden"
       />
 
       {/* Food image, desktop: right side, over the info bar */}
       <img
         src="/images/Herobanner/food-image.webp"
         alt=""
-        className="pointer-events-none absolute right-0 top-1/2 z-20 hidden h-[125%] w-[75%] -translate-y-1/2 object-cover object-left min-[800px]:block"
+        className="pointer-events-none absolute right-[-30px] top-1/2 z-20 hidden h-[125%] w-[75%] -translate-y-1/2 object-cover object-left wide:block"
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-6 px-6 pb-[260px] pt-16 lg:pt-4 text-center min-[800px]:w-[55%] min-[800px]:justify-center min-[800px]:gap-8 min-[800px]:px-10 min-[800px]:pb-24 min-[800px]:pt-8">
+      <div className="relative z-30  portrait:md:w-full portrait:md:justify-center portrait:md:pb-[500px] flex flex-col items-center gap-6 px-6 pb-[260px] pt-16 lg:pt-4 text-center wide:w-[55%] wide:justify-center lg:gap-8 wide:px-10 wide:pb-24 wide:pt-8">
         <img
           src="/images/Herobanner/mikes-corner-logo.webp"
           alt="Mike's Corner"
-          className="h-8 sm:h-14  self-center  min-[800px]:h-16 min-[800px]:self-center"
+          className="h-8 sm:h-13   self-center  wide:h-13 wide:self-center portrait:md:h-20"
         />
 
-        <h1 className="flex items-center gap-3 text-3xl pt-8 lg:pt-2 font-bold uppercase leading-tight text-mc-black [text-shadow:2px_2px_0_#fff] sm:text-4xl min-[800px]:text-6xl font-bowlby-one">
+        <h1 className="flex portrait:md:text-5xl items-center gap-3 text-3xl   lg:pt-2 font-bold uppercase leading-tight text-mc-black [text-shadow:2px_2px_0_#fff] sm:text-4xl wide:text-4xl font-bowlby-one">
           {/* <svg
             viewBox="0 0 40 40"
-            className="h-8 w-8 shrink-0 min-[800px]:h-10 min-[800px]:w-10"
+            className="h-8 w-8 shrink-0 wide:h-10 wide:w-10"
             fill="none"
             stroke="currentColor"
             strokeWidth="3"
@@ -52,7 +52,7 @@ export default function HeroBanner() {
 
         <Link
           href="/#menu"
-          className="rounded-full bg-mc-red px-8 py-3 mt-4 lg:mt-0 text-lg  font-bold   uppercase text-white transition hover:bg-mc-red-hover min-[800px]:px-9 min-[800px]:text-xl   "
+          className="rounded-full bg-mc-red px-8 py-3 mt-0 text-lg  font-bold   uppercase text-white transition hover:bg-mc-red-hover wide:px-9 wide:text-xl   "
         >
           See menu
         </Link>
@@ -62,7 +62,7 @@ export default function HeroBanner() {
             href="https://ig.me/m/mikescorner"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-mc-black px-5 py-2 text-base lg:text-lg font-bold uppercase text-mc-black transition hover:bg-mc-black hover:text-[#FAC800] min-[800px]:text-lg"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-mc-black px-5 py-2 text-base lg:text-lg font-bold uppercase text-mc-black transition hover:bg-mc-black hover:text-[#FAC800] wide:text-lg"
           >
             <FaInstagram className="h-8 w-8 " aria-hidden="true" />
             Book party, event or catering
@@ -72,7 +72,7 @@ export default function HeroBanner() {
             href="https://instagram.com/mikescorner"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs uppercase underline-offset-4   py-2 px-4  mt-2 text-mc-black underline min-[800px]:text-base"
+            className="text-xs uppercase underline-offset-4   py-2 px-4  mt-2 text-mc-black underline sm:text-sm lg:text-base"
           >
             Check out our upcoming events @mikescorner
           </a>
@@ -80,8 +80,8 @@ export default function HeroBanner() {
       </div>
 
       {/* Info bar */}
-      <div className="absolute inset-x-0 h-24 w-full flex items-center justify-center min-[800px]:justify-between bottom-0 z-20 bg-mc-beige">
-        <div className="flex items-center justify-between gap-10 sm:gap-12 px-2 py-3 text-sm font-medium uppercase text-mc-black min-[800px]:w-[54%] min-[800px]:justify-center min-[890px]:gap-16 min-[800px]:py-4 min-[700px]:text-base">
+      <div className="absolute inset-x-0 h-24 portrait:md:h-34 w-full flex items-center justify-center wide:justify-between bottom-0 z-20 bg-mc-beige">
+        <div className="flex items-center justify-between gap-10 sm:gap-12 px-2 py-3 text-sm font-medium uppercase text-mc-black wide:w-[54%] wide:justify-center min-[890px]:gap-16 wide:py-4 min-[700px]:text-base">
           <div className="flex items-center font-bowlby-one text-mc-black/90 gap-4 lg:pr-8">
             <FaLocationDot
               className="h-6 h-6 sm:h-8 sm:w-8 shrink-0"

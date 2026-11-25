@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative border-b border-gray-200 bg-white">
+    <header className="relative  shadow-sm     bg-mc-orange z-40 uppercase font-bowlby-one text-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold" onClick={closeMenu}>
@@ -34,14 +34,17 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-6 md:flex">
           <Link href="/">Home</Link>
-          <Link href="/#menu" className=" text-black hover:text-[#E8191C]">
-            Menu
+          <Link
+            href="/#menu"
+            className=" hover:scale-110 transition text-mc-black "
+          >
+            See Menu
           </Link>
           <a
             href="https://instagram.com/mikescorner"
             target="_blank"
             rel="noopener noreferrer"
-            className=" text-black hover:text-[#E8191C]"
+            className=" hover:scale-110 transition text-3xl text-mc-black"
           >
             <FaInstagram />
           </a>
@@ -95,24 +98,24 @@ export default function Header() {
 
           <button
             type="button"
-            className="cursor-pointer"
+            className="cursor-pointer text-mc-black"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
-            {menuOpen ? <X size={26} /> : <Menu size={26} />}
+            {menuOpen ? <X size={34} /> : <Menu size={34} />}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="absolute left-0 top-full z-50 w-full border-b border-gray-200 bg-white md:hidden">
+        <nav className="absolute left-0 top-full z-50 w-full   shadow-lg border-mc-red bg-mc-orange backdrop-blur-xl md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col px-6 py-6">
             <Link
               href="/"
               onClick={closeMenu}
-              className="border-b border-gray-100 py-3"
+              className="border-b border-mc-black/50   py-3"
             >
               Home
             </Link>
@@ -120,7 +123,7 @@ export default function Header() {
             <Link
               href="/#menu"
               onClick={closeMenu}
-              className="border-b border-gray-100 py-3"
+              className="border-b border-mc-black/50   py-3"
             >
               Menu
             </Link>
@@ -129,7 +132,7 @@ export default function Header() {
               href="https://instagram.com/mikescorner"
               target="_blank"
               rel="noopener noreferrer"
-              className=" text-black hover:text-[#E8191C]"
+              className=" text-mc-black text-3xl pt-4 hover:text-[#E8191C]"
             >
               <FaInstagram />
             </a>

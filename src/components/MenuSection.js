@@ -45,81 +45,91 @@ export default function MenuSection({ items = [] }) {
                       : "grid-cols-1 gap-x-12 sm:grid-cols-2 md:grid-cols-3"
                   }`}
                 >
-                  {categoryItems.map((item) => (
-                    <article
-                      key={item.id}
-                      className={`overflow-hidden rounded-xl bg-yellow-300 ${
-                        isDrink ? "flex flex-row" : ""
-                      }`}
-                    >
-                      {item.image && (
-                        <div
-                          className={`relative shrink-0 ${
-                            isDrink
-                              ? "aspect-square w-24 sm:w-28 lg:w-32"
-                              : "aspect-[4/3] lg:aspect-[4/4] w-full"
-                          }`}
-                        >
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            fill
-                            sizes={
-                              isDrink
-                                ? "(max-width: 639px) 96px, (max-width: 1023px) 112px, 128px"
-                                : "(max-width: 639px) 100vw, (max-width: 767px) 50vw, 33vw"
-                            }
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
+                  {categoryItems.map((item) => {
+                    const isSpecial =
+                      category === "Subs" && String(item.id) === "1";
 
-                      <div
-                        className={
-                          isDrink
-                            ? "flex min-w-0 flex-1 flex-col justify-center p-4"
-                            : "p-6"
-                        }
+                    return (
+                      <article
+                        key={item.id}
+                        className={`relative overflow-hidden rounded-xl bg-yellow-300 ${
+                          isDrink ? "flex flex-row" : ""
+                        }`}
                       >
+                        {isSpecial && (
+                          <span className="absolute -left-[30%] top-4 z-10 w-[140%] -rotate-[10deg] bg-mc-green py-2 text-center text-sm uppercase text-white  font-permanent-marker sm:text-base md:text-lg lg:text-xl">
+                            This month's special!
+                          </span>
+                        )}
+                        {item.image && (
+                          <div
+                            className={`relative shrink-0 ${
+                              isDrink
+                                ? "aspect-square w-24 sm:w-28 lg:w-32"
+                                : "aspect-[4/3] lg:aspect-[4/4] w-full"
+                            }`}
+                          >
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fill
+                              sizes={
+                                isDrink
+                                  ? "(max-width: 639px) 96px, (max-width: 1023px) 112px, 128px"
+                                  : "(max-width: 639px) 100vw, (max-width: 767px) 50vw, 33vw"
+                              }
+                              className="object-cover"
+                            />
+                          </div>
+                        )}
+
                         <div
                           className={
                             isDrink
-                              ? "flex flex-col gap-1"
-                              : "flex items-start justify-between gap-2 sm:gap-4"
+                              ? "flex min-w-0 flex-1 flex-col justify-center p-4"
+                              : "p-6"
                           }
                         >
-                          <h4
+                          <div
                             className={
                               isDrink
-                                ? "text-base  font-bowlby-one uppercase   leading-tight break-normal hyphens-none whitespace-normal text-mc-red"
-                                : "text-xl font-bowlby-one  uppercase  text-mc-red"
+                                ? "flex flex-col gap-1"
+                                : "flex items-start justify-between gap-2 sm:gap-4"
                             }
                           >
-                            {item.name}
-                          </h4>
+                            <h4
+                              className={
+                                isDrink
+                                  ? "text-base  font-bowlby-one uppercase   leading-tight break-normal hyphens-none whitespace-normal text-mc-red"
+                                  : "text-xl font-bowlby-one  uppercase  text-mc-red"
+                              }
+                            >
+                              {item.name}
+                            </h4>
 
-                          <span
+                            <span
+                              className={
+                                isDrink
+                                  ? "text-sm  font-bowlby-one uppercase mt-2 text-nowrap leading-tight text-mc-red"
+                                  : "text-sm  font-bowlby-one text-nowrap leading-tight uppercase pt-1 text-mc-red"
+                              }
+                            >
+                              {item.price} Kr
+                            </span>
+                          </div>
+                          <p
                             className={
                               isDrink
-                                ? "text-sm  font-bowlby-one uppercase mt-2 text-nowrap leading-tight text-mc-red"
-                                : "text-sm  font-bowlby-one text-nowrap leading-tight uppercase pt-1 text-mc-red"
+                                ? "mt-4 text-sm  font-permanent-marker text-mc-black/70    leading-5"
+                                : "mt-4 text-base sm:text-lg lg:text-xl font-permanent-marker text-mc-black/90    leading-5"
                             }
                           >
-                            {item.price} Kr
-                          </span>
+                            {item.description}
+                          </p>
                         </div>
-                        <p
-                          className={
-                            isDrink
-                              ? "mt-4 text-sm  font-permanent-marker text-mc-black/70    leading-5"
-                              : "mt-4 text-base sm:text-lg lg:text-xl font-permanent-marker text-mc-black/90    leading-5"
-                          }
-                        >
-                          {item.description}
-                        </p>
-                      </div>
-                    </article>
-                  ))}
+                      </article>
+                    );
+                  })}
                 </div>
               </div>
             );

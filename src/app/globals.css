@@ -35,6 +35,8 @@ html {
   --color-mc-purple: #860584;
 }
 
+@custom-variant wide (@media (min-width: 800px) and (orientation: landscape));
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
