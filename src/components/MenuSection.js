@@ -4,7 +4,10 @@ export default function MenuSection({ items = [] }) {
   const categories = ["Subs", "Sides", "Drikke"];
 
   return (
-    <section id="menu" className="bg-mc-yellow-dark px-5 py-8 text-mc-black ">
+    <section
+      id="menu"
+      className="bg-mc-yellow-dark px-5 py-8 pb-20 text-mc-black "
+    >
       <div className="mx-auto max-w-6xl">
         <svg viewBox="0 0 340 100" className="w-full max-w-lg mx-auto">
           <defs>
@@ -42,7 +45,7 @@ export default function MenuSection({ items = [] }) {
                   className={`grid gap-y-8 ${
                     isDrink
                       ? "grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4"
-                      : "grid-cols-1 gap-x-12 sm:grid-cols-2 md:grid-cols-3"
+                      : "grid-cols-1 gap-x-12 sm:grid-cols-2 lg:grid-cols-3"
                   }`}
                 >
                   {categoryItems.map((item) => {
@@ -52,13 +55,14 @@ export default function MenuSection({ items = [] }) {
                     return (
                       <article
                         key={item.id}
-                        className={`relative overflow-hidden rounded-xl bg-yellow-300 ${
-                          isDrink ? "flex flex-row" : ""
-                        }`}
+                        className={`relative overflow-hidden rounded-xl 
+                        ${isSpecial ? "bg-mc-red " : "bg-mc-yellow-light"} 
+                        ${isDrink ? "flex flex-row" : ""}
+                        `}
                       >
                         {isSpecial && (
-                          <span className="absolute -left-[30%] top-4 z-10 w-[140%] -rotate-[10deg] bg-mc-green py-2 text-center text-sm uppercase text-white  font-permanent-marker sm:text-base md:text-lg lg:text-xl">
-                            This month's special!
+                          <span className="absolute -left-[30%] top-4 z-10 w-[140%] -rotate-[10deg]   bg-mc-red py-2 text-center text-sm uppercase text-mc-yellow-dark font-bowlby-one sm:text-base md:text-lg lg:text-xl">
+                            This month's special
                           </span>
                         )}
                         {item.image && (
@@ -98,21 +102,23 @@ export default function MenuSection({ items = [] }) {
                             }
                           >
                             <h4
-                              className={
-                                isDrink
-                                  ? "text-base  font-bowlby-one uppercase   leading-tight break-normal hyphens-none whitespace-normal text-mc-red"
-                                  : "text-xl font-bowlby-one  uppercase  text-mc-red"
-                              }
+                              className={`font-bowlby-one uppercase 
+                                ${isSpecial ? "text-mc-yellow-dark" : "text-mc-red"}
+                            ${
+                              isDrink
+                                ? "text-base font-bowlby-one uppercase leading-tight break-normal hyphens-none whitespace-normal text-mc-red"
+                                : "text-xl  font-bowlby-one uppercase text-mc-red"
+                            }
+                                `}
                             >
                               {item.name}
                             </h4>
 
                             <span
-                              className={
-                                isDrink
-                                  ? "text-sm  font-bowlby-one uppercase mt-2 text-nowrap leading-tight text-mc-red"
-                                  : "text-sm  font-bowlby-one text-nowrap leading-tight uppercase pt-1 text-mc-red"
-                              }
+                              className={`font-bowlby-one uppercase text-nowrap leading-tight
+    ${isSpecial ? "text-mc-yellow-dark" : "text-mc-red"}
+    ${isDrink ? "mt-2 text-sm" : "pt-1 text-base lg:text-lg"}
+  `}
                             >
                               {item.price} Kr
                             </span>
