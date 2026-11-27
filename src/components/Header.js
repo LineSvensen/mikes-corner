@@ -33,12 +33,19 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-6 md:flex">
-          <Link href="/">Home</Link>
+          {/* <Link href="/">Home</Link> */}
           <Link
             href="/#menu"
             className=" hover:scale-110 transition text-mc-black "
           >
             See Menu
+          </Link>
+
+          <Link
+            href="/#events"
+            className=" hover:scale-110 transition text-mc-black"
+          >
+            Events
           </Link>
           <a
             href="https://instagram.com/mikescorner"
@@ -48,6 +55,7 @@ export default function Header() {
           >
             <FaInstagram />
           </a>
+
           {/* <Link href="/about">About</Link> */}
           {/* <Link href="/contact">Contact</Link> */}
           {/* <Link href="/policy">Store policy</Link> */}
@@ -113,26 +121,25 @@ export default function Header() {
         <nav className="absolute left-0 top-full z-50 w-full   shadow-lg border-mc-red bg-mc-orange backdrop-blur-xl md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col px-6 py-6">
             <Link
-              href="/"
-              onClick={closeMenu}
-              className="border-b border-mc-black/50   py-3"
-            >
-              Home
-            </Link>
-
-            <Link
               href="/#menu"
               onClick={closeMenu}
-              className="border-b border-mc-black/50   py-3"
+              className="border-b border-mc-black   py-3"
             >
               Menu
+            </Link>
+            <Link
+              href="/#events"
+              onClick={closeMenu}
+              className="border-b border-mc-black    py-3"
+            >
+              Events
             </Link>
 
             <a
               href="https://instagram.com/mikescorner"
               target="_blank"
               rel="noopener noreferrer"
-              className=" text-mc-black text-3xl pt-4 hover:text-[#E8191C]"
+              className=" text-mc-black  text-3xl pt-4 "
             >
               <FaInstagram />
             </a>

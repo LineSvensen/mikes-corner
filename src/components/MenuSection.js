@@ -44,7 +44,7 @@ export default function MenuSection({ items = [] }) {
                 <div
                   className={`grid gap-y-8 ${
                     isDrink
-                      ? "grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4"
+                      ? "grid-cols-1 min-[600px]:grid-cols-2 min-[880px]:grid-cols-3  min-[1107px]:grid-cols-4 gap-x-4 gap-y-4"
                       : "grid-cols-1 gap-x-12 sm:grid-cols-2 lg:grid-cols-3"
                   }`}
                 >
@@ -52,11 +52,13 @@ export default function MenuSection({ items = [] }) {
                     const isSpecial =
                       category === "Subs" && String(item.id) === "1";
 
+                    // ${isSpecial ? "bg-mc-red " : "bg-mc-yellow-light"}
+
                     return (
                       <article
                         key={item.id}
-                        className={`relative overflow-hidden rounded-xl 
-                        ${isSpecial ? "bg-mc-red " : "bg-mc-yellow-light"} 
+                        className={`relative overflow-hidden rounded-xl bg-mc-yellow-light
+                        
                         ${isDrink ? "flex flex-row" : ""}
                         `}
                       >
@@ -101,9 +103,11 @@ export default function MenuSection({ items = [] }) {
                                 : "flex items-start justify-between gap-2 sm:gap-4"
                             }
                           >
+                            {/* // ${isSpecial ? "text-mc-yellow-dark" : "text-mc-red"} */}
+
                             <h4
-                              className={`font-bowlby-one uppercase 
-                                ${isSpecial ? "text-mc-yellow-dark" : "text-mc-red"}
+                              className={`font-bowlby-one uppercase text-mc-red 
+                               
                             ${
                               isDrink
                                 ? "text-base font-bowlby-one uppercase leading-tight break-normal hyphens-none whitespace-normal text-mc-red"
@@ -113,10 +117,10 @@ export default function MenuSection({ items = [] }) {
                             >
                               {item.name}
                             </h4>
-
+                            {/* ${isSpecial ? "text-mc-yellow-dark" : "text-mc-red"} */}
                             <span
-                              className={`font-bowlby-one uppercase text-nowrap leading-tight
-    ${isSpecial ? "text-mc-yellow-dark" : "text-mc-red"}
+                              className={`font-bowlby-one uppercase text-nowrap leading-tight text-mc-red
+    
     ${isDrink ? "mt-2 text-sm" : "pt-1 text-base lg:text-lg"}
   `}
                             >

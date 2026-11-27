@@ -52,17 +52,17 @@ export default function HeroBanner() {
 
         <Link
           href="/#menu"
-          className="rounded-full bg-mc-red px-8 py-3 mt-0 text-lg  font-bold   uppercase text-white transition hover:bg-mc-red-hover wide:px-9 wide:text-xl   "
+          className="rounded-full bg-mc-red shadow-lg shadow-mc-black/10 px-8 py-3 mt-0 text-lg  font-bowlby-one tracking-wider uppercase text-white transition hover:bg-mc-red-hover wide:px-9 wide:text-xl   "
         >
           See menu
         </Link>
 
-        <div className="flex flex-col items-center gap-3 mt-2 lg:mt-0">
+        <div className="flex flex-col items-center gap-3 mt-2 lg:mt-0 ">
           <a
             href="https://ig.me/m/mikescorner"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-mc-black px-5 py-2 text-base lg:text-lg font-bold uppercase text-mc-black transition hover:bg-mc-black hover:text-[#FAC800] wide:text-lg"
+            className="inline-flex items-center gap-2 rounded-full border-2 shadow-lg shadow-mc-black/10 border-mc-black px-5 py-2 text-base lg:text-lg font-bold uppercase text-mc-black transition hover:bg-mc-black hover:text-[#FAC800] wide:text-lg"
           >
             <FaInstagram className="h-8 w-8 " aria-hidden="true" />
             Book party, event or catering
@@ -80,7 +80,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Info bar */}
-      <div className="absolute inset-x-0 h-24 portrait:md:h-34 w-full flex items-center justify-center wide:justify-between bottom-0 z-20 bg-mc-beige">
+      <div className="absolute inset-x-0 h-24 portrait:md:h-34 shadow-lg shadow-mc-black w-full flex items-center justify-center wide:justify-between bottom-0 z-20 bg-mc-beige">
         <div className="flex items-center justify-between gap-10 sm:gap-12 px-2 py-3 text-sm font-medium uppercase text-mc-black wide:w-[54%] wide:justify-center min-[890px]:gap-16 wide:py-4 min-[700px]:text-base">
           <div className="flex items-center font-bowlby-one text-mc-black/90 gap-4 lg:pr-8">
             <FaLocationDot

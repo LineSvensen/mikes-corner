@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="mt-auto border-t-2 border-mc-black/10 bg-mc-beige text-mc-black">
+    <footer className="mt-auto border-t-2 border-mc-black/10 bg-mc-orange text-mc-black">
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Main footer */}
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:justify-between">
@@ -70,7 +70,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-xs  underline underline-offset-8 gap-2 flex flex-row items-center transition-opacity hover:opacity-70 sm:text-sm lg:text-base"
               >
-                dont forget to check out our upcoming events! {" "}
+                Dont forget to check out our upcoming events! {" "}
                  <FaInstagram className="h-5 w-5 " aria-hidden="true" />{" "}
                 @mikescorner
               </a>
@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom footer */}
-        <div className="mt-12 border-t border-mc-black/20 pt-6">
+        <div className="mt-12 border-t-2 border-mc-black/10 pt-6">
           <div className="flex flex-col items-center justify-between gap-5 text-center sm:flex-row">
             {/* Copyright */}
             <p className="text-sm text-mc-black/80">

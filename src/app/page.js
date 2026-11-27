@@ -2,6 +2,7 @@ import HeroBanner from "@/components/Herobanner";
 import MenuSection from "@/components/MenuSection";
 import TrustSection from "@/components/TrustSection";
 import ContactSection from "@/components/ContactSection";
+import EventsBanner from "@/components/EventsSection";
 
 import { getMenu } from "@/lib/menu";
 
@@ -15,6 +16,8 @@ export default async function Home() {
       <main>
         <HeroBanner />
         <MenuSection items={menu} />
+        <EventsBanner />
+
         {/* <TrustSection /> */}
         {/* <ContactSection /> */}
       </main>
